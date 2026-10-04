@@ -3,7 +3,8 @@
   "name": "kingme",
   "compatibility_date": "2026-10-01",
   // Site 100% estático: a Cloudflare serve a pasta dist sem nenhum código de servidor.
-  // O domínio próprio entra aqui em "routes" quando for decidido (etapa 5 do README).
+  // Domínio próprio: a Cloudflare cria o DNS e o certificado HTTPS automaticamente.
+  "routes": [{ "pattern": "kingme.igreg.dev", "custom_domain": true }],
   "assets": {
     "directory": "./dist",
     // "/como-funciona" é uma rota do React, então todo caminho desconhecido devolve o index.html.

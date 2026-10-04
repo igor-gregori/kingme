@@ -2,7 +2,7 @@
 
 Damas brasileiras contra uma IA de bitboards que roda inteira no navegador.
 
-> **Status: pronto para teste local.** O site ainda não foi publicado: sem push, sem deploy e sem workflow de deploy automático até a confirmação do autor.
+**Acesse:** https://kingme.igreg.dev
 
 "King me!" é o que se diz em inglês quando uma pedra chega à última linha e vira dama.
 
@@ -181,17 +181,16 @@ npm test
 npm run bench
 ```
 
-## Etapas
+## Deploy
 
-1. ✅ Motor: bitboards, gerador de jogadas, busca e testes
-2. ✅ Interface no layout de mesa de análise, com os níveis de dificuldade
-3. ✅ Página "Como funciona" e README final
-4. ✅ Teste local com `npm run dev`
-5. Publicação no GitHub e na Cloudflare, **somente após a confirmação do autor**
+Todo push na branch `main` publica o site na Cloudflare pelo GitHub Actions, depois do lint e dos testes. O repositório precisa dos secrets `CLOUDFLARE_API_TOKEN` e `CLOUDFLARE_ACCOUNT_ID`. Para publicar manualmente:
 
-Antes da etapa 5 nada sai da máquina: sem push, sem deploy e sem workflow de deploy automático. O `wrangler.jsonc` já existe, mas sem domínio.
+```bash
+npm run deploy
+```
+
+O domínio está em `wrangler.jsonc`.
 
 ## Em aberto
 
-- **Domínio do site.** Seguindo os outros projetos, seria `kingme.igreg.dev`.
 - **Empate em finais com poucas peças.** As regras oficiais têm limites de lances próprios para finais como dama contra dama. Ficaram fora da primeira versão: por enquanto esses finais acabam por repetição ou pelos 20 lances de damas.
