@@ -157,6 +157,8 @@ Números de `npm run bench` (Node 24):
 
 A mesma base do tomatask (Vite, React, TypeScript, oxlint e wrangler), mais testes com `node --test`.
 
+As cores são a paleta do [Folha Azul](https://github.com/igor-gregori/folha-azul-design): os tokens no começo de `src/index.css` dizem de qual cor dela cada valor saiu.
+
 ```
 src/engine/board.ts     bitboards, deslocamentos e tabelas de caminhos
 src/engine/movegen.ts   gerador de jogadas

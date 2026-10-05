@@ -129,7 +129,7 @@ export function EnginePanel({ report, thinking, budget, searchKey, analysis, onT
       <dl className="internals">
         <div title="O lance mais distante que a busca alcançou, contando as capturas que ela segue além da profundidade pedida.">
           <dt>alcance</dt>
-          <dd>{report ? `${report.reach} lances` : '—'}</dd>
+          <dd>{report ? `${report.reach} ${report.reach === 1 ? 'lance' : 'lances'}` : '—'}</dd>
         </div>
         <div title="Posições que receberam uma nota da função de avaliação.">
           <dt>avaliações</dt>

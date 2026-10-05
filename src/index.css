@@ -1,28 +1,31 @@
 /* ---------- Tokens ---------- */
+/* As cores vêm da paleta B2 do Folha Azul (github.com/igor-gregori/folha-azul-design,
+   docs/cores.md). O comentário de cada linha diz de qual cor da paleta o valor saiu;
+   o tema escuro usa os passos escuros das mesmas cores. */
 :root {
-  --bg: #fafafa;
-  --surface: #ffffff;
-  --surface-2: #f0f0f2;
-  --elev: #ffffff;
-  --text: #111113;
-  --muted: #6f6f78;
-  --faint: #e4e4e8;
-  --accent: #b7770a;
-  --gold: #dd9b12;
-  --alert: #e5484d;
-  --sq-light: #ece7da;
-  --sq-dark: #6f9274;
-  --white-piece: #fbf9f4;
-  --white-edge: #c9c2b1;
-  --black-piece: #2d2d32;
-  --black-edge: #0f0f11;
-  --chip-edge: #0f0f11;
-  --mark-last: rgb(246 205 78 / 0.5);
-  --mark-selected: rgb(246 205 78 / 0.85);
-  --mark-target: rgb(17 17 19 / 0.3);
-  --arrow: #2f6fe4;
-  --series: #2a78d6;
-  --good: #218358;
+  --bg: #ffffff; /* fundo */
+  --surface: #ffffff; /* fundo */
+  --surface-2: #f1f4f9; /* superfície */
+  --elev: #ffffff; /* fundo */
+  --text: #161b26; /* texto */
+  --muted: #5f6779; /* suave */
+  --faint: #e3e7ee; /* fio */
+  --accent: #2350b0; /* destaque */
+  --gold: #c98500; /* série 4, âmbar */
+  --alert: #e34948; /* vermelho do par divergente */
+  --sq-light: #eceff4; /* neutro do par divergente */
+  --sq-dark: color-mix(in srgb, #2c63c4 72%, #ffffff); /* série 1, diluída no fundo */
+  --white-piece: #ffffff; /* fundo */
+  --white-edge: #c3c9d4; /* eixo */
+  --black-piece: #161b26; /* texto */
+  --black-edge: #0f1218; /* fundo do tema escuro */
+  --chip-edge: #161b26; /* texto */
+  --mark-last: rgb(255 255 255 / 0.45); /* fundo, por cima da casa */
+  --mark-selected: rgb(255 255 255 / 0.75);
+  --mark-target: rgb(22 27 38 / 0.35); /* texto */
+  --arrow: #d9682b; /* série 2, laranja */
+  --series: #2c63c4; /* série 1, azul */
+  --good: #14937a; /* série 3, verde */
   --shadow: 0 1px 2px rgb(0 0 0 / 0.03), 0 8px 32px -12px rgb(0 0 0 / 0.08);
   --font: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
@@ -30,28 +33,28 @@
 }
 
 :root[data-theme='dark'] {
-  --bg: #0b0b0d;
-  --surface: #131316;
-  --surface-2: #1c1c20;
-  --elev: #18181b;
-  --text: #ededef;
-  --muted: #8b8b94;
-  --faint: #26262b;
-  --accent: #f0b03c;
-  --gold: #f0b03c;
-  --alert: #ff6369;
-  --sq-light: #b6b1a3;
-  --sq-dark: #4f6d55;
-  --white-piece: #f1eee6;
-  --white-edge: #a8a292;
-  --black-piece: #232327;
-  --black-edge: #050506;
-  --chip-edge: #5a5a63;
-  --mark-last: rgb(246 205 78 / 0.42);
-  --mark-selected: rgb(246 205 78 / 0.8);
-  --arrow: #6ea0ff;
-  --series: #3987e5;
-  --good: #3dd68c;
+  --bg: #0f1218; /* fundo */
+  --surface: #171b23; /* superfície */
+  --surface-2: #1f242d; /* grade */
+  --elev: #171b23; /* superfície */
+  --text: #eceff4; /* texto */
+  --muted: #8f97a6; /* suave */
+  --faint: #262c37; /* fio */
+  --accent: #8fb0f2; /* destaque */
+  --gold: #c98500; /* série 4, âmbar */
+  --alert: #e66767; /* vermelho do par divergente */
+  --sq-light: #b3b9c4; /* contexto, no passo claro */
+  --sq-dark: color-mix(in srgb, #4a8be8 72%, #0f1218); /* série 1, diluída no fundo */
+  --white-piece: #eceff4; /* texto */
+  --white-edge: #8f97a6; /* suave */
+  --black-piece: #171b23; /* superfície */
+  --black-edge: #0f1218; /* fundo */
+  --chip-edge: #465062; /* eixo */
+  --mark-last: rgb(236 239 244 / 0.3); /* texto, por cima da casa */
+  --mark-selected: rgb(236 239 244 / 0.55);
+  --arrow: #d9682b; /* série 2, laranja */
+  --series: #4a8be8; /* série 1, azul */
+  --good: #1aa386; /* série 3, verde */
   --shadow: none;
   color-scheme: dark;
 }
@@ -199,11 +202,15 @@ svg.i {
   border: 0;
   outline: 0;
   background: transparent
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23808088' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%235f6779' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
     no-repeat right center / 10px 6px;
   color: var(--text);
   font-weight: 700;
   cursor: pointer;
+}
+
+:root[data-theme='dark'] .level select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%238f97a6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .level:focus-within {
@@ -292,12 +299,12 @@ svg.i {
 
 .gauge-label.on-white {
   bottom: 5px;
-  color: #2d2d32;
+  color: #161b26;
 }
 
 .gauge-label.on-black {
   top: 5px;
-  color: #f1eee6;
+  color: #eceff4;
 }
 
 .gauge.flipped .gauge-label.on-white {
@@ -893,13 +900,13 @@ button.sq:not(.active) {
 .line .by-white {
   background: var(--white-piece);
   box-shadow: inset 0 0 0 1px var(--white-edge);
-  color: #17171a;
+  color: #161b26;
 }
 
 .line .by-black {
   background: var(--black-piece);
   box-shadow: inset 0 0 0 1px var(--chip-edge);
-  color: #f1eee6;
+  color: #eceff4;
 }
 
 .internals {
@@ -1659,8 +1666,8 @@ dialog[open] {
 }
 
 .verdict.legal {
-  background: color-mix(in srgb, var(--good) 16%, transparent);
-  color: var(--good);
+  background: color-mix(in srgb, var(--good) 22%, transparent);
+  color: var(--text);
 }
 
 .verdict.dropped {
